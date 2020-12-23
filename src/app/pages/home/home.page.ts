@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
+import { Store } from '@ngrx/store';
 
 @Component({
   selector: 'jv-home',
@@ -10,7 +11,7 @@ export class HomePage implements OnInit {
 
   searchControl: FormControl;
 
-  constructor() { }
+  constructor(private store: Store) { }
 
   ngOnInit(): void {
     this.searchControl = new FormControl('', Validators.required);
